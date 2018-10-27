@@ -1,4 +1,6 @@
 
+
+
 // I deleted all the existing functions. 
 // At some point you might want to put functionality into functions for readability :-)
 window.onload = function () {
@@ -25,11 +27,8 @@ window.onload = function () {
   var deleteButtons = document.getElementsByClassName(deleteButtonId);
 
   // this will only fetch the very first delete button. make it work for all of them once you added more elements.
-  deleteButtons[0].onclick = function () {
-    // look at https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
-    // NOTE that closest() expexts a CSS-selector EXPRESSION ( thus the '.' in '.shop-item')
-    // I found this via searching google for "javascript get parent element by class"
-    deleteButtons[0].closest('.shop-item').remove() 
+  deleteButtons[0].onclick = function () {    
+    deleteButtons[0].parentNode.remove()
   }
 
   for (var i = 0; i < deleteButtons.length; i++) {
